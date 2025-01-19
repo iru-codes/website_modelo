@@ -44,3 +44,21 @@
         text-align: justify;
     }
 }
+
+.barra_home{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color:rgb(206, 219, 230);
+    justify-content: space-around;
+}
+
+.barra_home i{
+    color: rgb(15, 15, 128);
+    font-size: 60px;
+    padding: 3%;
+}
+
+.barra_home i:hover{
+    transform: scale(1.4);
+}
