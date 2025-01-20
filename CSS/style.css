@@ -8,6 +8,13 @@
     width: 100% !important; 
 }
 
+body{
+    max-width: 1600px;
+    justify-self: center;
+}
+
+/*-------------------HOME-------------------*/
+
 .contenedor_home{
     display: flex;
     padding: 3%;
@@ -61,4 +68,61 @@
 
 .barra_home i:hover{
     transform: scale(1.4);
+}
+
+/*-------------------PRODUCTOS-------------------*/
+
+/* Contenedor de productos usando CSS Grid */ 
+.productos_cont { 
+    display: grid; /* Cambiado de flex a grid */ 
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Definidas columnas responsivas */ 
+    gap: 20px; /* Espacio entre las cards */ 
+    padding: 20px; /* Padding alrededor del contenedor */ 
+}
+
+.producto_card{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 20px;
+    margin: 50px 0; /*Ajustado*/
+    gap: 2%;
+    border: 1px solid rgb(15, 15, 128);
+    border-radius: 15px;
+}
+
+.producto_text{
+    font-size: clamp(1.25rem, 1.5vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2%;
+    width: 40%;
+}
+
+.producto_card img{
+    width: 60%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .productos_cont{
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .producto_card{
+        flex-flow: column wrap;
+        align-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 20px;
+        padding: 3%;
+    }
+
+    .producto_text{
+        width: 100%;
+        text-align: center;
+    }
 }
