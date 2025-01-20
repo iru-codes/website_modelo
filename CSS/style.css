@@ -70,7 +70,8 @@ body{
     transform: scale(1.4);
 }
 
-/*-------------------PRODUCTOS-------------------*/
+/*-------------------GALERIA-------------------*/
+
 
 /* Contenedor de productos usando CSS Grid */ 
 .objeto_cont { 
@@ -126,5 +127,58 @@ body{
         width: 100%;
         text-align: center;
         gap: 15px;
+    }
+}
+
+/*-------------------ABOUT US-------------------*/
+
+.about_us_cont{
+    width: 100%;
+    justify-self: center;
+}
+
+.presentacion{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    padding: 10px;
+}
+
+.presentacion h1{
+    width: 25%;
+    font-size: clamp(2rem, 6vw, 15rem);
+    padding: 10px;
+    align-content: end;
+}
+
+.video_link{
+    font-size: xx-small;
+}
+
+#video{
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+
+@media (max-width: 750px) {
+    .presentacion{
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    .video_link{
+        width: 100%;
+        max-width: 650px;
+        margin: 10px;
+    }
+
+    .presentacion h1{
+        width: 100%;
+        font-size: 80px;
+        text-align: center;
     }
 }
