@@ -84,19 +84,20 @@ body{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     margin: 50px 0; /*Ajustado*/
     gap: 2%;
     border: 1px solid rgb(15, 15, 128);
     border-radius: 15px;
+    background-color: rgb(228, 222, 222);
 }
 
 .producto_text{
-    font-size: clamp(1.25rem, 1.5vw, 2rem);
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2%;
+    gap: 4%;
     width: 40%;
 }
 
@@ -124,5 +125,6 @@ body{
     .producto_text{
         width: 100%;
         text-align: center;
+        gap: 15px;
     }
 }
