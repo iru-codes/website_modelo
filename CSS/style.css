@@ -134,19 +134,17 @@ body{
 
 .about_us_cont{
     width: 100%;
-    justify-self: center;
 }
 
 .presentacion{
-    width: 100%;
     display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
+    flex-flow: row wrap;
+    justify-content: center;
     padding: 10px;
 }
 
 .presentacion h1{
-    width: 25%;
+    width: 30%;
     font-size: clamp(2rem, 6vw, 15rem);
     padding: 10px;
     align-content: end;
@@ -169,16 +167,184 @@ body{
         flex-flow: column wrap;
         justify-content: center;
     }
-
+    
     .video_link{
         width: 100%;
         max-width: 650px;
         margin: 10px;
     }
-
+    
     .presentacion h1{
         width: 100%;
         font-size: 80px;
         text-align: center;
     }
+
+    #video{ 
+        width: 100%; 
+    }
+
+}
+
+@media (max-width: 1500px) {
+    .presentacion h1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*-------------------AU-TEXT-------------------*/
+
+.au_texto{
+    width: 90%;
+    text-align: justify;
+    justify-self: center;
+    align-content: center;
+    font-size: clamp(1rem, 2vw, 3rem);
+    margin: 3%;
+}
+
+.au_cont{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 10px;
+}
+
+.au_texto_img{
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.au_texto_img p{
+    padding: 10px;
+    font-size: clamp(1rem, 2vw, 3rem);
+}
+
+.au_texto_img img{
+    width: 55%;
+    max-width: 300px;
+    object-fit: contain;
+}
+
+/*-------------------CARRUSEL-------------------*/
+
+/* Contenedor general del carrusel */
+.au_carrusel{
+    text-align: center;
+}
+
+.au_carrusel_cont {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Tarjetas del carrusel */
+.au_carrusel_item {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+    width: 100%;
+}
+
+.au_carrusel_item img{
+    width: 100%;
+    max-width: 400px;
+    justify-self: center;
+    border-radius: 10px;
+}
+
+/* Tarjeta activa */
+.item_carrousel-activa {
+    display: block; 
+    opacity: 1;
+}
+
+/* Flechas de navegación */
+.flecha {
+    position: absolute;
+    transform: translateY(-50%); 
+    background-color: transparent; 
+    color: black;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+
+/* Ajuste para pantallas grandes */
+.flecha_izquierda {
+    left: 20%;
+}
+
+.flecha_derecha {
+    right: 20%;
+}
+
+/* Efecto hover */
+.flecha:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* En pantallas pequeñas */
+@media (max-width: 600px) {
+    .flecha {
+        font-size: 1.5rem; 
+        top: auto; 
+        bottom: 10px;
+        transform: none; 
+    }
+
+    .flecha_izquierda {
+        left: 20px; /
+    }
+
+    .flecha_derecha {
+        right: 20px;
+    }
+
+    .au_carrusel_cont {
+        padding-bottom: 40px;
+    }
+}
+
+/* Flechas en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .flecha {
+        position: static; 
+        display: inline-block;
+        font-size: 1.5rem; 
+        margin: 10px 5px; 
+        padding: 8px; 
+        background-color: #f0f0f0;
+        border-radius: 50%; 
+        border: 1px solid #ccc; 
+    }
+
+    /* Colocar las flechas debajo del carrusel */
+    .au_carrusel_cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px; 
+    }
+}
+
+/* Imagen dentro de las tarjetas */
+.item_carrousel img {
+    max-width: 80%; 
+    height: auto; 
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
