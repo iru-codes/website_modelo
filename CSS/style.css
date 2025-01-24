@@ -238,13 +238,20 @@ body{
 /* Contenedor general del carrusel */
 .au_carrusel{
     text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.au_carrusel_wrapper{
+    display: flex;
+    align-items: center;
 }
 
 .au_carrusel_cont {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: auto;
     margin: 0 auto;
 }
 
@@ -253,12 +260,10 @@ body{
     display: none;
     opacity: 0;
     transition: opacity 0.5s ease-in-out; 
-    width: 100%;
 }
 
 .au_carrusel_item img{
-    width: 100%;
-    max-width: 400px;
+    width: 70%;
     justify-self: center;
     border-radius: 10px;
 }
@@ -270,81 +275,47 @@ body{
 }
 
 /* Flechas de navegación */
+.au_carrusel_flechas{
+    align-self: center;
+    width: 100%;
+}
+
 .flecha {
     position: absolute;
-    transform: translateY(-50%); 
+    transform: translateY(-75%);
+    max-width: 750px;
     background-color: transparent; 
     color: black;
     border: none;
     font-size: 2rem;
     cursor: pointer;
     z-index: 10;
-    transition: transform 0.3s ease;
-    padding: 10px;
 }
 
 /* Ajuste para pantallas grandes */
 .flecha_izquierda {
-    left: 20%;
+    left: 25%;
 }
 
 .flecha_derecha {
-    right: 20%;
+    right: 25%;
 }
 
 /* Efecto hover */
 .flecha:hover {
-    transform: translateY(-50%) scale(1.2);
+    
 }
 
-/* En pantallas pequeñas */
-@media (max-width: 600px) {
-    .flecha {
-        font-size: 1.5rem; 
-        top: auto; 
-        bottom: 10px;
-        transform: none; 
-    }
-
+/* En pantallas medianas */
+@media (max-width: 1200px) {
     .flecha_izquierda {
-        left: 20px; /
+        left: 10px;
     }
-
+    
     .flecha_derecha {
-        right: 20px;
-    }
-
-    .au_carrusel_cont {
-        padding-bottom: 40px;
+        right: 10px;
     }
 }
 
-/* Flechas en pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .flecha {
-        position: static; 
-        display: inline-block;
-        font-size: 1.5rem; 
-        margin: 10px 5px; 
-        padding: 8px; 
-        background-color: #f0f0f0;
-        border-radius: 50%; 
-        border: 1px solid #ccc; 
-    }
 
-    /* Colocar las flechas debajo del carrusel */
-    .au_carrusel_cont {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 10px; 
-    }
-}
-
-/* Imagen dentro de las tarjetas */
-.item_carrousel img {
-    max-width: 80%; 
-    height: auto; 
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
+/*Img con tamaño fijo y salto de ubicación de las flechas*/
